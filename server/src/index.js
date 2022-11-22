@@ -1,25 +1,24 @@
 
-const express = require('express'); 
-const dotenv = require('dotenv');
+//DEPENDENCIES
+const express = require('express');
+require('dotenv').config();
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-const router = require('./routes/router');
-
-dotenv.config();
+const router = require('./router')
 
 const app = express();
 
-//Middleware
-
+//MIDDLEWARE
 app.use(express.json());
-app.use(morgan('tiny'));
 app.use(cors());
+app.use(morgan('tiny'));
 
 app.use(router);
 
-mongoose.connect(process.env.MONGO_URI).then(() => { 
-    console.log("connected to Mongo")
-app.listen(3030);
+
+mongoose.connect(process.env.MONGO_URI).then(() => {
+    app.listen(3030);
+    console.log("Connected to Mongo");
 })
