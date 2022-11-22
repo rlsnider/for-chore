@@ -5,5 +5,6 @@ node_modules
 DS_Store
 
 ##copy for .env file:
-(More on this later)
 
+MONGO_URI=mongodb+srv://Ramona:abcde@cluster0.vuwcmdh.mongodb.net/todos?retryWrites=true&w=majority
+PORT=3030
