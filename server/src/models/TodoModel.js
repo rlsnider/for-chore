@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose
 
-const todoSchema = new Schema({
+const TodoSchema = new Schema({
     text: {
         type: String, required: true
     },
@@ -11,6 +11,6 @@ const todoSchema = new Schema({
     },
 });
 
-const Todo = mongoose.model('Todo', todoSchema);
+const TodoModel = mongoose.model('Todo', TodoSchema);
 
-module.exports = Todo;
+module.exports = TodoModel;

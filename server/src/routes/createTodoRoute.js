@@ -1,9 +1,11 @@
-const Todo = require('../models/TodoModel');
+const TodoModel = require('../models/TodoModel');
 
 module.exports =  async (req, res) => {
     const{ text } = req.body;
-    const todo = new Todo({ 
+    const todo = new TodoModel({ 
         text,
+        comnpleted: false,
     })
-    await todo.save();
+    const newTodo = await todo.save();
+    res.json(newTodo);
 }
