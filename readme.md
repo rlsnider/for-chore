@@ -77,3 +77,8 @@ on the line after the return, wrap code(inbetweet return()) with empty fragment<
 
 ##Install react icons 
 
+When ready to run both front and backend "npm i -D concurrently" run this from for-chore directory (didn't work)Just started each one seperately
+installed npm i react-toastify (for error messages)
+installed npm i axios
+
+##add "proxy": "http://localhost:3030", in frontend package.json on 3rd line(just after version)
