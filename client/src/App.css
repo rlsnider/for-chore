@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.nav,#navbar, #basic-navbar-nav{
+  background-color: #d885d8;
+  padding: 0px;
+} 
+#navbar{
+  border: 2px solid rgb(74, 74, 74);
+}
+
+

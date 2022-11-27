@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+// import logo from './images/Chore.jpg'
+// import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar'
-  
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
   return (
     <div className="App">
