@@ -19,16 +19,28 @@ npm i --save bcryptjs
             express-async-handler
             jsonwebtoken
             mongoose
+            react-toastify
+            axios
             (optional is morgan and colors)
             colors is a dependency is found to "color code" your messages in the terminal. I like it.
-            also, do a npm i -D nodemon (this makes nodemon run on Dev)
+            also, do a npm i -D nodemon concurrently(this makes nodemon and concurrently run on Dev)
 
-            In "scripts":
-                "start": "node backend/server.js",
-                "server": "nodemon backend/server.js"
+            In "scripts": {
+              "start": "node backend/server.js",
+              "server": "nodemon backend?server.js",
+              "client": "npm start --prefix frontend",
+              "dev": "concurrently \"npm run server\" \"npm run client\""
+              },
+              The last item in the package.json in the the For-Chore directory is:
+              "devDependencies": {
+                "concurrently": ...,
+                "nodemon": ...
+
+            
                 
+  If concurrently is not working it is because there was a bug in cloning down the project.            
 
-##The scripts file like this enables use to be able to stay in the root folder while running both the back and frontend. You can keep your terminal in the "for-chore" root and run the frontend(client) or backend.
+##The scripts file like this enables use to be able to stay in the root folder while running both the back and frontend. You can keep your terminal in the "for-chore" root and run the frontend(client) and backend(server).
 
 ##Note: (NODE_ENV is set to development right now. This shows a lot more of the error messages than without this file set. Easier to de-bug. When we deploy, we will set this to Production)
 
@@ -43,14 +55,7 @@ The --template redux adds the redux at the same time.
 There are now 2 package-lock.json and package.json. (its ok--supposed to be that way)
 
 In the root folder (For-chore) there is one and in the frontend there is another.
-go into the the package.json in the for-chore folder.
 
-Change your scripts to look like this:
- "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend"
-  },
   Now while still in your for-chore directory, go to terminal and run "npm run client" and your react/redux will start
   #Follow these steps:
   ##1. delete App.css, and logo.css
@@ -73,7 +78,7 @@ Change your scripts to look like this:
 ##6. cd into frontend, run "npm i react-router-dom"
 
 ##7. App.js file: import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-on the line after the return, wrap code(inbetweet return()) with empty fragment<></>, then inside fragment wrap with <Router></Router>
+on the line after the return, wrap code(inbetween return()) with empty fragment<></>, then inside fragment wrap with <Router></Router>
 
 ##Install react icons 
 
