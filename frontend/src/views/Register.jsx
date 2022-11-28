@@ -47,7 +47,7 @@ function Register() {
         if(password !== password2) {
         toast.error('Passwords must be the same')
     } else {
-      const userData = { name, email, password, }
+      const userData = { name, email, password }
       dispatch(register(userData))
     }
   }

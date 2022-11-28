@@ -11,6 +11,7 @@ PORT = 3030
 MONGO_URI =mongodb+srv://Ramona:abcde@cluster0.vuwcmdh.mongodb.net/todos?retryWrites=true&w=majority
 JWT_SECRET= abc
 
+
 #Depencencies:
 npm i --save bcryptjs 
             cors
@@ -82,7 +83,7 @@ on the line after the return, wrap code(inbetween return()) with empty fragment<
 
 ##Install react icons 
 
-When ready to run both front and backend "npm i -D concurrently" run this from for-chore directory (didn't work)Just started each one seperately
+When ready to run both front and backend "npm i -D concurrently" run this from for-chore directory (if it didn't work)Just start each one seperately
 installed npm i react-toastify (for error messages)
 installed npm i axios
 

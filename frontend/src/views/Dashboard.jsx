@@ -1,18 +1,35 @@
 import { useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import TodoForm from '../components/TodoForm'
+import Spinner from '../components/Spinner'
+import {getTodos, reset} from '../features/todos/todoSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const {user} = useSelector((state) => state.auth)
+  const {todos, isLoading, isError, message} = useSelector((state) => state.todos)
 
   useEffect(() => {
+    if(isError) {
+      console.log(message);
+    }
+
     if(!user) {
       navigate('/login')
     }
-  }, [user, navigate])
+    dispatch(getTodos())
+
+    return () => {
+      dispatch(reset())
+    }
+  }, [user, navigate, isError, message, dispatch])
+
+  if(isLoading) {
+    return <Spinner />
+  }
   return (
    <>
    <section className="heading">

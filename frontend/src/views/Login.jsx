@@ -58,7 +58,7 @@ function Login() {
   <>
   <section className="heading">
     <h1>
-      <FaSignInAlt /> Login
+      <FaSignInAlt /> Login and add Chores
     </h1>
     <p>Login</p>
   </section>

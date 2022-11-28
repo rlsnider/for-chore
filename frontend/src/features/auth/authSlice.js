@@ -40,12 +40,10 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
         return thunkAPI.rejectWithValue(message)
     }
 })
-
-export const logout = createAsyncThunk('auth/logout', 
-async() => {
+//Logout
+export const logout = createAsyncThunk('auth/logout', async () => {
     await authService.logout()
 })
-
 
 export const authSlice = createSlice({
     name: 'auth',
@@ -58,7 +56,6 @@ export const authSlice = createSlice({
             state.message = ''
         }
     },
-
     extraReducers: (builder) => {
         builder
         .addCase(register.pending, (state) => {

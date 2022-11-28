@@ -30,7 +30,9 @@ function TodoForm() {
         <div className='form-group'>
             <button 
             className='btn btn-block'
-            type='submit'>Add Chore To Do</button>
+            type='submit'>
+                Add Chore To Do
+            </button>
         </div>
     </form>
  </section>
