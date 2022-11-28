@@ -1,7 +1,6 @@
-// import logo from './images/Chore.jpg'
 // import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
