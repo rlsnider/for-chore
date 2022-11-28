@@ -1,6 +1,6 @@
 import {Nav, Navbar, NavDropdown, Container, Form, Button} from 'react-bootstrap'
 
-function NavScrollExample() {
+function TopNav() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
@@ -36,4 +36,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample;
+export default TopNav;
