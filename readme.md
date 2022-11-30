@@ -1,3 +1,5 @@
+#This readme file is for information purposes while writing this program.
+
 ##.env = 
 NODE_ENV = development
 PORT = 3030
@@ -17,6 +19,7 @@ npm i -D nodemon
 npm i express-async-handler
 npm i bcryptjs
 npm i jsonwebtoken
+npm i -D concurrently
 
 #FrontEnd=
 in for-Chore Directory:
@@ -27,6 +30,11 @@ go to package.json in for-chore directory scripts should look like:
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend"
     }
-    #in dir frontend
+add proxy to package.json in frontend dir- add line after "version" and before "private" 
+(about line 4)
+"proxy": "http://localhost:3030", 
+
+#in dir frontend
     npm i react-router-dom
     npm i react-icons
+    npm i axios react-toastify
