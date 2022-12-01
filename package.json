@@ -4,7 +4,7 @@
   "description": "Todo ",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js",
+    "start": "node backend/server.js",
     "build": "npm install && cd frontend && npm install && npm run build",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
