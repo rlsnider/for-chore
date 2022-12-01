@@ -18,9 +18,8 @@ function Login() {
   const dispatch = useDispatch()
 
   const { user, isLoading, isError, isSuccess, message } = useSelector(
-    function (state) {
-    return state.auth
-  })
+    (state) => state.auth
+  )
 
   useEffect(() => {
     if (isError) {
@@ -62,6 +61,7 @@ function Login() {
         <h1>
           <FaSignInAlt /> Login
         </h1>
+        <p>Login</p>
       </section>
 
       <section className='form'>

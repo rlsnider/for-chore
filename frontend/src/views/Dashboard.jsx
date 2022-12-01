@@ -11,16 +11,18 @@ function Dashboard() {
   const dispatch = useDispatch()
 
   const { user } = useSelector((state) => state.auth)
-  
-  const { todos, isLoading, isError, message } = useSelector((state) => state.todos)
+  const {todos, isLoading, isError, message } = useSelector(
+    (state) => state.todos
+  )
 
   useEffect(() => {
     if (isError) {
-      console.log(message)
+      console.log('Not null')
     }
 
     if (!user) {
-      navigate('/login')
+    //  navigate('/login')
+    console.log("one time please")
     }
 
     dispatch(getTodos())
@@ -38,6 +40,7 @@ function Dashboard() {
     <>
       <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
+        <p>ForChore</p>
       </section>
 
       <TodoForm />
@@ -50,7 +53,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You do not have any chores!</h3>
+          <h3>You have no chores!</h3>
         )}
       </section>
     </>
@@ -58,3 +61,4 @@ function Dashboard() {
 }
 
 export default Dashboard
+

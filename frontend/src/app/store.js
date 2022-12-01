@@ -5,6 +5,6 @@ import todoReducer from '../features/todos/todoSlice'
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    todos:todoReducer
+    todos:todoReducer,
   },
 })

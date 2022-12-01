@@ -45,8 +45,10 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   }
 })
 
+
 export const logout = createAsyncThunk('auth/logout', async () => {
-    await authService.logout()
+  console.log("White Screen of Death")
+  await authService.logout()
 })
 
 export const authSlice = createSlice({
