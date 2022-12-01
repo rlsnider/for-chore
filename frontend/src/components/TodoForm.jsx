@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createTodo } from '../features/todos/todoSlice'
-
+import {FaPencilAlt} from "react-icons/fa"
 function TodoForm() {
   const [text, setText] = useState('')
 
@@ -18,7 +18,7 @@ function TodoForm() {
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='text'>Todo</label>
+          <label htmlFor='text'>Chores <FaPencilAlt/></label>
           <input
             type='text'
             name='text'

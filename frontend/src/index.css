@@ -13,7 +13,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 p {
@@ -39,7 +39,7 @@ h3 {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 ;
   text-align: center;
 }
 
@@ -68,7 +68,7 @@ h3 {
 }
 
 .header ul li a:hover {
-  color: lightslategrey;
+  color: rgb(178, 180, 182);
 }
 
 .header ul li a svg {
@@ -83,7 +83,8 @@ h3 {
 }
 
 .heading p {
-  color: #828282;
+  color: #dbdbdb;
+  font-size: 32px;
 }
 
 .todos {
@@ -127,12 +128,16 @@ h3 {
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
+  font-size: 18px;
 }
 
 .form-group label {
   text-align: left;
   display: block;
   margin: 0 0 5px 3px;
+  font-size: 28px;
+  font-weight: 550;
+  color: 
 }
 
 .btn {
@@ -141,7 +146,7 @@ h3 {
   border-radius: 5px;
   background: #000;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
@@ -212,4 +217,16 @@ h3 {
   .heading p {
     font-size: 1.5rem;
   }
+}
+.header{
+  font-size: 22px;
+  font-weight: 600;
+}
+.login{
+  font-size: 50px;
+  font-weight: 600;
+}
+.container, #root{
+  background-color: rgb(51, 96, 107);
+  height: 100%;
 }

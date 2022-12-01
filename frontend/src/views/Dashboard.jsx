@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import TodoForm from '../components/TodoForm'
 import TodoItem from '../components/TodoItem'
 import Spinner from '../components/Spinner'
-import { getTodos, reset } from '../features/todos/todoSlice'
+import { getTodos} from '../features/todos/todoSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -21,15 +21,13 @@ function Dashboard() {
     }
 
     if (!user) {
-    //  navigate('/login')
-    console.log("one time please")
+    navigate('/login')
+    return;
     }
 
     dispatch(getTodos())
 
-    return () => {
-      dispatch(reset())
-    }
+   
   }, [user, navigate, isError, message, dispatch])
 
   if (isLoading) {
