@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import Image from '../components/img/ForChoreLogo.jpg'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -58,10 +59,10 @@ function Login() {
   return (
     <>
       <section className='heading'>
-        <h1>
+        <h1 className="login">
           <FaSignInAlt /> Login
         </h1>
-        <p>Login</p>
+        <p><img src={Image} alt="logo" /></p>
       </section>
 
       <section className='form'>
