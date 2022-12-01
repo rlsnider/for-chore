@@ -21,14 +21,14 @@ function Dashboard() {
     }
 
     if (!user) {
-    //  navigate('/login')
-    console.log("one time please")
+    navigate('/login')
+    return;
     }
 
     dispatch(getTodos())
 
     return () => {
-      dispatch(reset())
+      // dispatch(reset())
     }
   }, [user, navigate, isError, message, dispatch])
 
