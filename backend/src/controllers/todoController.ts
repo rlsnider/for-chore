@@ -1,15 +1,20 @@
-const asyncHandler = require('express-async-handler')
 
-const Todo = require('../models/todoModel')
-const User = require('../models/userModel')
+import Todo from "../models/todoModel";
+import User from '../models/userModel';
+import { Request, Response } from 'express';
+
+export interface UserInfoRequest extends Request {
+  user: any
+}
 
 //Get Todos ROUTE: GET /api/todos
-const getTodos = asyncHandler(async(req, res)=> {
+const getTodos = (async(req: UserInfoRequest, res: Response)=> {
     const todos = await Todo.find({ user: req.user.id })
     res.status(200).json(todos)
 })
+
 //Create Todo ROUTE: POST /api/todos
-const createTodo = asyncHandler(async (req, res) => {
+const createTodo = (async (req: UserInfoRequest, res: Response) => {
     if (!req.body.text) {
       res.status(400)
       throw new Error('Please add a chore')
@@ -24,7 +29,7 @@ const createTodo = asyncHandler(async (req, res) => {
     res.status(200).json(todo)
   })
 //Update todo ROUTE: PUT /api/todos/:id
-const updateTodo = asyncHandler(async(req, res)=> {
+const updateTodo = (async(req: UserInfoRequest, res: Response) => {
     const todo = await Todo.findById(req.params.id)
 
     if(!todo) {
@@ -45,7 +50,7 @@ const updateTodo = asyncHandler(async(req, res)=> {
         res.status(200).json(updatedTodo)
 })
 //Delete todo route: DELETE /api/todos/:_id
-    const deleteTodo = asyncHandler(async (req, res) => {
+    const deleteTodo = (async (req: UserInfoRequest, res: Response) => {
     const todo = await Todo.findById(req.params.id)
   
     if (!todo) {

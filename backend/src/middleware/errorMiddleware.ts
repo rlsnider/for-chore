@@ -1,4 +1,6 @@
-const errorHandler = (err, req, res, next) => {
+import {Request, Response } from 'express';
+
+const errorHandler = (err: { message: any; stack: any }, req: Request, res: Response, next: Function) => {
   const statusCode = res.statusCode ? res.statusCode : 500
   res.status(statusCode)
   res.json({ 

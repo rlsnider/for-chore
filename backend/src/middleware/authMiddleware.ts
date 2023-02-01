@@ -1,9 +1,13 @@
-const jwt = require('jsonwebtoken')
-const asyncHandler = require('express-async-handler')
-const User = require('../models/userModel')
+import jwt from 'jsonwebtoken';
+import User from '../models/userModel';
+import { Request, Response } from 'express';
 
-const protect = asyncHandler(async (req, res, next) => {
-  let token
+export interface UserInfoRequest extends Request {
+  user: any
+}
+
+const protect = (async (req: UserInfoRequest, res: Response, next: Function) => {
+  let token: any;
 
   if (
     req.headers.authorization &&
@@ -14,6 +18,7 @@ const protect = asyncHandler(async (req, res, next) => {
       token = req.headers.authorization.split(' ')[1]
 
       // Verify token
+      //@ts-ignore
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
       // Get user from the token

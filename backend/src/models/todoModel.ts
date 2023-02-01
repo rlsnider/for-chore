@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
-const todoSchema = mongoose.Schema({
-    user:{
+const todoSchema = new mongoose.Schema({
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
@@ -10,8 +10,8 @@ const todoSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a chore']
     }
-},  {
+}, {
     timestamps: true,
 })
 
-module.exports = mongoose.model('Todo', todoSchema)
+export default mongoose.model('Todo', todoSchema)

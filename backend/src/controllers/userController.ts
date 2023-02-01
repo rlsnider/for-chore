@@ -1,14 +1,18 @@
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-const asyncHandler = require('express-async-handler')
-const User = require('../models/userModel')
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import User from '../models/userModel';
+import { Request, Response } from 'express';
+
+export interface UserInfoRequest extends Request {
+    user: any
+}
 
 
 //Register User Route: POST /api/users/
-const registerUser = asyncHandler(async (req, res) => {
+const registerUser = (async (req: Request, res: Response) => {
     const {name, email, password} = req.body
     if(!name || !email || !password) {
-        res.status(400)
+        res.status(400) 
         throw new Error('Please add all fields')
     }
     const userExists = await User.findOne({email})
@@ -37,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
 })
 
 //Login User Route: POST /api/login
-const loginUser = asyncHandler(async (req, res) => {
+const loginUser = (async (req: Request, res: Response) => {
     const {email, password} = req.body
 
     const user = await User.findOne({email})
@@ -55,7 +59,8 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 })
 //Get User data Route: GET /api/users/me
-const getMe = asyncHandler(async (req, res) => {
+const getMe = (async (req: UserInfoRequest, res: Response ) => {
+    //@ts-ignore
     const { _id, name, email } = await User.findById(req.user.id)
     res.status(200).json({
         id: _id,
@@ -65,7 +70,8 @@ const getMe = asyncHandler(async (req, res) => {
 })
 
 //Generate JWT 
-const generateToken = (id) => {
+const generateToken = (id: any) => {
+    //@ts-ignore
     return jwt.sign({ id}, process.env.JWT_SECRET, {
         expiresIn: '5000d',
     }) 
