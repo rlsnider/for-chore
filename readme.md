@@ -45,7 +45,7 @@ add proxy to package.json in frontend dir- add line after "version" and before "
 ##Description
 You will see a simple to do list for Chores. It has been created as a collaborated effort in order to practice teamwork in creating a project using Express, MongoDB, React/Redux and Redux/toolkit to create CRUD operations and styling. Jsonwebtoken and bcryptjs were used for password authentication and encryption.
 
-The project has been deployed on Hiroku. 
+The project has been deployed on Hiroku by Courtney Hatcher, CSS styling was done by Amanda Henry and backend work by Ramona Snider. 
 
 #Routes
 
